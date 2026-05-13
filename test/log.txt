@@ -1,0 +1,14 @@
+2024-11-05 10:12:33 INFO  Server started on port 8080
+2024-11-05 10:12:34 INFO  Loading configuration from config.yml
+2024-11-05 10:12:34 WARN  Deprecated setting detected: "enableLegacyMode"
+2024-11-05 10:12:35 INFO  Database connection established
+2024-11-05 10:12:36 INFO  User 'admin' logged in
+2024-11-05 10:12:40 ERROR Failed to load module 'analytics': File not found
+2024-11-05 10:12:41 INFO  Retrying module load (attempt 1)
+2024-11-05 10:12:42 INFO  Retrying module load (attempt 2)
+2024-11-05 10:12:43 ERROR Module 'analytics' permanently unavailable
+2024-11-05 10:12:50 INFO  Scheduled task 'cleanup' started
+2024-11-05 10:12:51 INFO  Scheduled task 'cleanup' completed in 1.2s
+2024-11-05 10:13:00 INFO  User 'guest' attempted login
+2024-11-05 10:13:00 WARN  Failed login attempt for user 'guest'
+2024-11-05 10:13:10 INFO  Server shutting down
