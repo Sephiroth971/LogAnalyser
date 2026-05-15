@@ -10,15 +10,13 @@ public class Main{
         
         try (BufferedReader br = new BufferedReader(new FileReader("test/log.txt"))){
             String line;
-            while( (line = br.readLine()) != null){
+            while( (line = br.readLine()) != null && linecount < 5){
 
-                linecount++;
-                    if (linecount == 5){
-                    System.out.println(" line 5 : " + line);
-                    break;
-                }
+                    linecount++;
+                    System.out.println(" line " + linecount + ": " + line);
             }
-        }
+        }        
+
         catch(IOException e){
             System.out.println("Error" + e.getMessage());
         }
