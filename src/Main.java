@@ -8,16 +8,19 @@ public class Main{
             boolean filterinfo = false;
             boolean filtererror = false;
             boolean filterwarn = false;
-        if (args.length >0 && args[0].equalsIgnoreCase("--INFO")){
-            filterinfo = true;
+        for (String arg : args){
+            switch (arg.toUpperCase()){
+                case "--INFO":
+                    filterinfo = true;
+                    break;
+                case "--ERROR":
+                    filtererror = true;
+                    break;
+                case "--WARN":
+                    filterwarn = true;
+                    break;
 
-        }
-        else if (args[0].equalsIgnoreCase("--ERROR")){
-            filtererror = true;
-
-        }
-        else if (args[0].equalsIgnoreCase("--WARN")){
-            filterwarn = true ;
+            }
         }
         logAnalyser analyser = new logAnalyser();
         analyser.read_file("test/log.txt", filterinfo,filtererror, filterwarn);
