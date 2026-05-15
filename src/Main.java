@@ -19,8 +19,17 @@ public class Main{
                 case "--WARN":
                     filterwarn = true;
                     break;
-
+                case "--ALL" :
+                    filterinfo = true;
+                    filtererror= true;
+                    filterwarn = true;
+                    break;
             }
+        }
+        if (!filterinfo && !filtererror && !filterwarn) {
+            filterinfo = true;
+            filtererror = true;
+            filterwarn = true;
         }
         logAnalyser analyser = new logAnalyser();
         analyser.read_file("test/log.txt", filterinfo,filtererror, filterwarn);
