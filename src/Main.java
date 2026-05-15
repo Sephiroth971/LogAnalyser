@@ -5,24 +5,21 @@ import java.io.IOException;
 public class Main{
 
     public static void main(String[] args){
-        int linecount = 0;
+            boolean filterinfo = false;
+            boolean filtererror = false;
+        if (args.length >0 && args[0].equalsIgnoreCase("--INFO")){
+            filterinfo = true;
 
-        
-        try (BufferedReader br = new BufferedReader(new FileReader("test/log.txt"))){
-            String line;
-            while( (line = br.readLine()) != null){
-
-            
-                if (line.contains("INFO")){
-                    System.out.println( line);
-                }
-            }
-
-        }        
-
-        catch(IOException e){
-            System.out.println("Error" + e.getMessage());
         }
+        if (args[0].equalsIgnoreCase("--ERROR")){
+            filtererror = true;
+
+        }
+        logAnalyser analyser = new logAnalyser();
+        analyser.read_file("test/log.txt", filterinfo,filtererror);
+
 
     }
-}
+
+    }
+
