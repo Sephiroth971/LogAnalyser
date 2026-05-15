@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class logAnalyser{
-    public void read_file(String filename, boolean boolfilterinfo, boolean boolfiltererror){
+    public void read_file(String filename, boolean boolfilterinfo, boolean boolfiltererror, boolean boolfilterwarn){
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))){
             String line;
@@ -13,8 +13,11 @@ public class logAnalyser{
                 if (boolfilterinfo && line.contains("INFO")){
                     System.out.println( line);
                 }
-                if (boolfiltererror && line.contains("ERROR")){
+                else if (boolfiltererror && line.contains("ERROR")){
                     System.out.println( line);
+                }
+                else if (boolfilterwarn && line.contains("WARN")){
+                    System.out.println(line);
                 }
             }
 
